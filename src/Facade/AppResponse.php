@@ -1,13 +1,13 @@
 <?php
 
-namespace YoungMayor\AppResponse;
+namespace YoungMayor\AppResponse\Facade;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \YoungMayor\AppResponse\Skeleton\SkeletonClass
  */
-class AppResponseFacade extends Facade
+class AppResponse extends Facade
 {
     /**
      * Get the registered name of the component.

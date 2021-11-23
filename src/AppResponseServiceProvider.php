@@ -15,19 +15,19 @@ class AppResponseServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'app-response');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'app-response');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'app-response');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('app-response.php'),
+                __DIR__ . '/../config/config.php' => config_path('app-response.php'),
             ], 'config');
 
             // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/app-response'),
-            ], 'views');*/
+            $this->publishes([
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/app-response'),
+            ], 'views');
 
             // Publishing assets.
             /*$this->publishes([
@@ -50,7 +50,7 @@ class AppResponseServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'app-response');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'app-response');
 
         // Register the main class to use with the facade
         $this->app->singleton('app-response', function () {

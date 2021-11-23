@@ -2,7 +2,13 @@
 
 namespace YoungMayor\AppResponse;
 
-class AppResponse
+class AppResponse extends Auto
 {
-    // Build your next great package.
+    public $api, $web;
+
+    public function __construct()
+    {
+        $this->api = new API();
+        $this->web = new Web();
+    }
 }

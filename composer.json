@@ -5,25 +5,26 @@
         "youngmayor",
         "app-response"
     ],
-    "homepage": "https://github.com/youngmayor/app-response",
+    "homepage": "https://github.com/youngmayor/laravel-app-response",
     "license": "MIT",
     "type": "library",
-    "authors": [
-        {
-            "name": "Meyoron Aghogho",
-            "email": "youngmayor.dev@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Meyoron Aghogho",
+        "email": "youngmayor.dev@gmail.com",
+        "role": "Developer"
+    }],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0"
+        "php": "^7.2|^8.0",
+        "illuminate/support": "~6|~7|~8"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
+        "files": [
+            "src/Support/helpers.php"
+        ],
         "psr-4": {
             "YoungMayor\\AppResponse\\": "src"
         }
@@ -36,7 +37,6 @@
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
     },
     "config": {
         "sort-packages": true
@@ -47,7 +47,7 @@
                 "YoungMayor\\AppResponse\\AppResponseServiceProvider"
             ],
             "aliases": {
-                "AppResponse": "YoungMayor\\AppResponse\\AppResponseFacade"
+                "AppResponse": "YoungMayor\\AppResponse\\Facade\\AppResponse"
             }
         }
     }
