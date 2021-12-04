@@ -259,7 +259,7 @@ trait ResponseBuilder
      * Generates a paginated response for a request
      *
      * @param object $pageObject
-     * @param JsonResource $resource
+     * @param $resourceClass Path to JsonResource class
      * @param string $message
      * @param boolean $withLastPage
      * 
@@ -267,7 +267,7 @@ trait ResponseBuilder
      */
     public function paginated(
         $pageObject,
-        JsonResource $resource,
+        $resourceClass,
         $message = '',
         $withLastPage = true
     ) {
@@ -278,7 +278,7 @@ trait ResponseBuilder
         }
 
         if ($pageObject && count($pageObject)) {
-            $data['payload'] = $resource::collection($pageObject);
+            $data['payload'] = $resourceClass::collection($pageObject);
         }
 
         return $this->buildResponse(
